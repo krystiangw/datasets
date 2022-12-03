@@ -3,6 +3,6 @@ export interface Order {
   name: string;
   createdAt: string;
   datasetIds: number[];
-  countries: string;
+  countries: string[];
   budget: string;
 }

@@ -1,2 +1,12 @@
-<p>orders-list works!</p>
-<div class="card" *ngFor="let order of orders$ | async">{{order | json}}</div>
+<div class="orders-list">
+  <h1>Your Buy Orders</h1>
+  <div class="description">
+    Showing <b>{{(orders$ | async)?.length ?? 0}}</b> results from <b>{{((selectedCountriesNames$ | async) ?? []).join(', ')}}</b>
+  </div>
+  <div class="orders-list-container">
+    <app-orders-list-item [order]="order" *ngFor="let order of orders$ | async"></app-orders-list-item>
+  </div>
+</div>
+<div class="app-country-selection-wrapper">
+  <app-country-selection></app-country-selection>
+</div>

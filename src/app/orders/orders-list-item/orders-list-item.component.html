@@ -1,1 +1,16 @@
-<p>orders-list-item works!</p>
+<mat-card>
+  <mat-card-content>
+    <div class="order-list-item">
+      <div class="header">
+        <div class="order-name">Order name</div>
+        <div class="order-date">Date created</div>
+        <div class="order-budget">Budget</div>
+      </div>
+      <div class="row">
+        <div class="order-name">{{order.name}}</div>
+        <div class="order-date">{{order.createdAt | date}}</div>
+        <div class="order-budget">{{order.budget | currency}}</div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

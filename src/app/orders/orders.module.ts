@@ -5,18 +5,21 @@ import { OrdersDetailsComponent } from './orders-details/orders-details.componen
 import { OrdersFormComponent } from './orders-form/orders-form.component';
 import { OrdersRoutingModule } from './orders-routing.module';
 import { OrdersListItemComponent } from './orders-list-item/orders-list-item.component';
-
+import { MatCardModule } from '@angular/material/card';
+import { CountriesModule } from '../countries/countries.module';
 
 @NgModule({
   declarations: [
     OrdersListComponent,
     OrdersDetailsComponent,
     OrdersFormComponent,
-    OrdersListItemComponent
+    OrdersListItemComponent,
   ],
   imports: [
     CommonModule,
-    OrdersRoutingModule
+    OrdersRoutingModule,
+    MatCardModule,
+    CountriesModule
   ]
 })
 export class OrdersModule { }

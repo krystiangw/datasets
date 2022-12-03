@@ -1,0 +1,21 @@
+
+.order-list-item {
+  .header, .row {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+
+    .order-name {
+      flex: 40%;
+    }
+
+    .order-date {
+      flex: 40%;
+    }
+
+    .order-budget {
+      flex: 20%;
+    }
+  }
+}

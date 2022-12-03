@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { OrdersModule } from './orders/orders.module';
 import { DatasetsModule } from './datasets/datasets.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
+    MatCardModule,
     DatasetsModule,
     HttpClientModule,
     OrdersModule,

@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-card-content>
+    <div class="country-selection">
+      <div class="country-selection-title">Included countries</div>
+
+      <mat-chip-listbox aria-label="Fish selection" multiple="true">
+        <mat-chip-option *ngFor="let item of selection$ | async" [selected]="item.selected" (click)="selectionChange(item.country)">{{item.country.name}}</mat-chip-option>
+      </mat-chip-listbox>
+    </div>
+  </mat-card-content>
+</mat-card>
