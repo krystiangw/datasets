@@ -1,1 +1,12 @@
-<p>datasets-list works!</p>
+<div class="datasets-list">
+  <h1>Datasets</h1>
+  <div class="datasets-list-stats">
+    Showing <b>{{(datasets$ | async)?.length ?? 0}}</b> results from <b>{{((selectedCountriesNames$ | async) ?? []).join(', ') || 'Any countries'}}</b>
+  </div>
+  <div class="datasets-list-container">
+    <app-datasets-list-item [item]="item" *ngFor="let item of datasets$ | async"></app-datasets-list-item>
+  </div>
+</div>
+<div class="app-country-selection-wrapper">
+  <app-country-selection></app-country-selection>
+</div>

@@ -27,7 +27,6 @@ export class CountrySelectionComponent {
 
 
   selectionChange(item: Country) {
-    console.log('.... selectionChange ', item);
     this.countryDataServiceService.selectCountry(item);
   }
 }

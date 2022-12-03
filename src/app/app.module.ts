@@ -10,7 +10,11 @@ import { OrdersModule } from './orders/orders.module';
 import { DatasetsModule } from './datasets/datasets.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
+import { NgHttpCachingModule, NgHttpCachingConfig } from 'ng-http-caching';
 
+const ngHttpCachingConfig: NgHttpCachingConfig = {
+  lifetime: 1000 * 10
+};
 @NgModule({
   declarations: [
     AppComponent
@@ -26,6 +30,7 @@ import { MatCardModule } from '@angular/material/card';
     HttpClientModule,
     OrdersModule,
     DatasetsModule,
+    NgHttpCachingModule.forRoot(ngHttpCachingConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]

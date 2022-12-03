@@ -1,10 +1,10 @@
 <div class="orders-list">
   <h1>Your Buy Orders</h1>
-  <div class="description">
-    Showing <b>{{(orders$ | async)?.length ?? 0}}</b> results from <b>{{((selectedCountriesNames$ | async) ?? []).join(', ')}}</b>
+  <div class="orders-list-stats">
+    Showing <b>{{(orders$ | async)?.length ?? 0}}</b> results from <b>{{((selectedCountriesNames$ | async) ?? []).join(', ') || 'Any countries'}}</b>
   </div>
   <div class="orders-list-container">
-    <app-orders-list-item [order]="order" *ngFor="let order of orders$ | async"></app-orders-list-item>
+    <app-orders-list-item [order]="order" *ngFor="let order of orders$ | async" [routerLink]="['/orders', order.id]"></app-orders-list-item>
   </div>
 </div>
 <div class="app-country-selection-wrapper">

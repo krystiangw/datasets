@@ -1,1 +1,30 @@
-<p>datasets-list-item works!</p>
+<mat-card>
+  <mat-card-header>
+    <div class="dataset-header">
+      <img [src]="item.dataset.thumbnailUrl">
+      <h2>{{item.dataset.id}} {{item.dataset.label}}</h2>
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="dataset-content">
+      <div class="dataset-description">
+        <div class="label">Dataset description</div>
+        <div class="value">{{item.dataset.description}}</div>
+      </div>
+      <div class="row">
+        <div class="label">Cost per record</div>
+        <div class="value">{{item.dataset.costPerRecord | currency}}</div>
+      </div>
+      <div class="row">
+        <div class="label">Available records</div>
+        <div class="value">{{item.availableRecords}} records</div>
+      </div>
+      <div class="countries-row">
+        <div class="label">Included countries</div>
+        <div class="countries-row-list">
+          <mat-chip disabled *ngFor="let country of item.countries">{{country.name}}</mat-chip>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

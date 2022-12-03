@@ -1,1 +1,43 @@
-<p>orders-details works!</p>
+<div class="orders-details">
+  <h1>Buy order details</h1>
+  <ng-container *ngIf="(order$ | async) as order">
+    <mat-card>
+      <mat-card-content>
+        <div class="row">
+          <div class="item">
+            <div class="label">Order name</div>
+            <div class="value">{{order.name}}</div>
+          </div>
+          <div class="item">
+            <div class="label">Date created</div>
+            <div class="value">{{order.createdAt | date}}</div>
+          </div>
+          <div class="item">
+            <div class="label">Order budget</div>
+            <div class="value">{{order.budget | currency}}</div>
+          </div>
+        </div>
+        <div class="dataset-row">
+          <div class="label">Included datasets</div>
+          <div class="dataset-container">
+            <div class="dataset" *ngFor="let dataset of datasets$ | async">
+              <div class="col">
+                <img [src]="dataset.thumbnailUrl">
+              </div>
+              <div class="details">
+                <div class="label">{{dataset.label}}</div>
+                <div class="value">{{dataset.costPerRecord | currency}} per record</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="countries-row">
+          <div class="label">Included countries</div>
+          <div class="countries-row-list">
+            <mat-chip disabled *ngFor="let country of countries$ | async">{{country.name}}</mat-chip>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+</div>

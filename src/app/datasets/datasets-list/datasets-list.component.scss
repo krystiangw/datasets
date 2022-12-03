@@ -1,0 +1,28 @@
+.datasets-list {
+  padding: 20px 0 150px 0;
+
+  &-stats {
+    margin: 20px 0;
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+
+    app-datasets-list-item {
+      flex: 0 0 48%;
+    }
+  }
+}
+
+.app-country-selection-wrapper {
+  position: fixed;
+  bottom: 40px;
+  display: flex;
+  width: 800px;
+  flex-direction: row;
+  justify-content: center;
+}

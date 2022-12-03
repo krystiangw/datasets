@@ -1,0 +1,22 @@
+mat-card {
+  min-height: 350px;
+}
+
+.dataset-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+
+.dataset-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.countries-row-list {
+  padding-top: 10px;
+  display: flex;
+  gap: 10px;
+}
